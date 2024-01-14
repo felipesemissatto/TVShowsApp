@@ -25,6 +25,28 @@ final class TVShowsAppTests: XCTestCase {
 
     // MARK: - Tests
 
+    func testGetTVShows_whenNilData_shouldReturnError() {
+        // Given
+        self.sut.mockData = nil
+        var tvShowList: [TVShow]?
+        var error: ApiServiceErrors?
+
+        // When
+        self.sut.getShows(onPage: 0) { result in
+            switch result {
+            case .success(let responseTVShows):
+                tvShowList = responseTVShows
+            case .failure(let responseError):
+                error = responseError
+            }
+        }
+
+        // Then
+        XCTAssertNil(tvShowList)
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error, .noDataFound)
+    }
+
     func testGetTVShows_whenDataIsValid_ShouldReturnTVShowList() throws {
         // Given
         self.sut.mockData = self.validTVShowsData

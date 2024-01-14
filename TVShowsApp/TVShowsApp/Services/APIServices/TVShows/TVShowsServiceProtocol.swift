@@ -5,6 +5,6 @@
 //  Created by Felipe Semissatto on 14/01/24.
 //
 
-protocol ShowsServiceProtocol {
-    func getShows(onPage page: Int, completion: @escaping (Result<[TVShow], Error>) -> Void)
+protocol TVShowsServiceProtocol {
+    func getShows(onPage page: Int, completion: @escaping (Result<[TVShow], ApiServiceErrors>) -> Void)
 }

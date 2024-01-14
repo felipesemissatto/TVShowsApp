@@ -18,6 +18,8 @@
 		2F71EBCF2B545F1B001B992D /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBCE2B545F1A001B992D /* TVShow.swift */; };
 		2F71EBD22B546505001B992D /* TVShowsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBD12B546505001B992D /* TVShowsServiceMock.swift */; };
 		2F71EBD42B5465F6001B992D /* ApiServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBD32B5465F6001B992D /* ApiServiceErrors.swift */; };
+		2F71EBD62B546E70001B992D /* TVShowsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBD52B546E70001B992D /* TVShowsService.swift */; };
+		2F71EBD92B547168001B992D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBD82B547168001B992D /* Endpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		2F71EBCE2B545F1A001B992D /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		2F71EBD12B546505001B992D /* TVShowsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsServiceMock.swift; sourceTree = "<group>"; };
 		2F71EBD32B5465F6001B992D /* ApiServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceErrors.swift; sourceTree = "<group>"; };
+		2F71EBD52B546E70001B992D /* TVShowsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsService.swift; sourceTree = "<group>"; };
+		2F71EBD82B547168001B992D /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 				2F71EBC62B545D61001B992D /* Views */,
 				2F71EBC72B545D73001B992D /* Scenes */,
 				2F71EBC82B545DA9001B992D /* Services */,
+				2F71EBD72B547154001B992D /* Helpers */,
 				2F71EBC92B545DCE001B992D /* Resources */,
 				2F71EB9F2B5456FE001B992D /* Preview Content */,
 			);
@@ -180,8 +185,8 @@
 		2F71EBCA2B545E3F001B992D /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				2F71EBCB2B545EAC001B992D /* TVShows */,
 				2F71EBD32B5465F6001B992D /* ApiServiceErrors.swift */,
+				2F71EBCB2B545EAC001B992D /* TVShows */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				2F71EBCC2B545EF4001B992D /* TVShowsServiceProtocol.swift */,
+				2F71EBD52B546E70001B992D /* TVShowsService.swift */,
 			);
 			path = TVShows;
 			sourceTree = "<group>";
@@ -201,6 +207,14 @@
 				2F71EBD12B546505001B992D /* TVShowsServiceMock.swift */,
 			);
 			path = TVShows;
+			sourceTree = "<group>";
+		};
+		2F71EBD72B547154001B992D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F71EBD82B547168001B992D /* Endpoints.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +372,9 @@
 				2F71EB9C2B5456FB001B992D /* ContentView.swift in Sources */,
 				2F71EBCD2B545EF4001B992D /* TVShowsServiceProtocol.swift in Sources */,
 				2F71EBD42B5465F6001B992D /* ApiServiceErrors.swift in Sources */,
+				2F71EBD92B547168001B992D /* Endpoints.swift in Sources */,
 				2F71EBCF2B545F1B001B992D /* TVShow.swift in Sources */,
+				2F71EBD62B546E70001B992D /* TVShowsService.swift in Sources */,
 				2F71EB9A2B5456FB001B992D /* TVShowsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

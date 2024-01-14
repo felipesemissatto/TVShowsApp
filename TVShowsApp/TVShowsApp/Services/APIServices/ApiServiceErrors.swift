@@ -10,4 +10,5 @@ import Foundation
 enum ApiServiceErrors: Error {
     case noDataFound
     case failedToDecode
+    case invalidUrl
 }

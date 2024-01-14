@@ -234,6 +234,5 @@ extension TVShowsAppTests {
                   "Thriller"
                 ]
             """.data(using: .utf8)
-
     }
 }

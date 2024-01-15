@@ -13,7 +13,18 @@ struct TVShowsView: View {
 
     // MARK: - Views
     var body: some View {
-        EmptyView()
+        VStack {
+            TVShowsListView(tvShowList: $viewModel.paginatedTVShowList,
+                            fetchMoreTVShow: { viewModel.fetchMoreTVShow() })
+            .overlay(alignment: .center) {
+                if viewModel.isFetching {
+                    SearchingView(feedbackMessage: "Loading TV shows...")
+                }
+            }
+        }
+        .onAppear {
+            viewModel.getTVShows(onPage: viewModel.currentPage)
+        }
     }
 }
 

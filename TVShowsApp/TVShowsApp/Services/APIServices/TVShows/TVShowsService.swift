@@ -33,6 +33,27 @@ class TVShowsService: TVShowsServiceProtocol {
     }
 
     func searchShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
-        completion(.failure(.failedToDecode))
+        guard let showName = name.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
+              let url = URL(string: Endpoints.showSearch+showName) else {
+            completion(.failure(.invalidUrl))
+            return
+        }
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: url) { (data, _, _) in
+            guard let jsonData = data else {
+                completion(.failure(.noDataFound))
+                return
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                let decoded = try decoder.decode([RankedShow].self, from: jsonData)
+                completion(.success(decoded))
+            } catch {
+                completion(.failure(.failedToDecode))
+            }
+        }
+        task.resume()
     }
 }

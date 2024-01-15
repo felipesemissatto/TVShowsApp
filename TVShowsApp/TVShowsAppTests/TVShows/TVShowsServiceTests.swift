@@ -25,7 +25,7 @@ final class TVShowsServiceTests: XCTestCase {
 
     // MARK: - Tests
 
-    // MARK: Paginated TV shows
+    // MARK: Paginated TV shows tests
     func testGetTVShows_whenNilData_shouldReturnError() {
         // Given
         self.sut.mockData = nil
@@ -92,7 +92,30 @@ final class TVShowsServiceTests: XCTestCase {
         XCTAssertEqual(error, .failedToDecode)
     }
 
-    // MARK: Search TV shows by name
+    // MARK: Search TV shows by name tests
+
+    func testSearchShowByName_whenDataIsNil_shouldReturnError() {
+        // Given
+        self.sut.mockData = nil
+        let showName = "girls"
+        var rankedTVShows: [RankedShow]?
+        var error: ApiServiceErrors?
+
+        // When
+        self.sut.searchShow(by: showName) { result in
+            switch result {
+            case .success(let responseRankedTVShows):
+                rankedTVShows = responseRankedTVShows
+            case .failure(let responseError):
+                error = responseError
+            }
+        }
+
+        // Then
+        XCTAssertNil(rankedTVShows)
+        XCTAssertNotNil(error)
+        XCTAssertEqual(error, .noDataFound)
+    }
 
     func testSearchShowByName_whenDataIsValid_ShouldReturnShowList() throws {
         // Given

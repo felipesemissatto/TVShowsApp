@@ -26,4 +26,19 @@ class TVShowsServiceMock: TVShowsServiceProtocol {
             completion(.failure(.failedToDecode))
         }
     }
+
+    func searchShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
+        guard let mockData = self.mockData else {
+            completion(.failure(.noDataFound))
+            return
+        }
+
+        do {
+            let decoder = JSONDecoder()
+            let decoded = try decoder.decode([RankedShow].self, from: mockData)
+            completion(.success(decoded))
+        } catch {
+            completion(.failure(.failedToDecode))
+        }
+    }
 }

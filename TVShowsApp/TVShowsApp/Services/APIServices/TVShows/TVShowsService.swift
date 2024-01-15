@@ -31,4 +31,8 @@ class TVShowsService: TVShowsServiceProtocol {
         }
         task.resume()
     }
+
+    func searchShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
+        completion(.failure(.failedToDecode))
+    }
 }

@@ -32,7 +32,7 @@ class TVShowsService: TVShowsServiceProtocol {
         task.resume()
     }
 
-    func searchShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
+    func searchTVShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
         guard let showName = name.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
               let url = URL(string: Endpoints.showSearch+showName) else {
             completion(.failure(.invalidUrl))

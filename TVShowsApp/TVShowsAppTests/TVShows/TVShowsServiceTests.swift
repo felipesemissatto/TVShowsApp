@@ -102,7 +102,7 @@ final class TVShowsServiceTests: XCTestCase {
         var error: ApiServiceErrors?
 
         // When
-        self.sut.searchShow(by: showName) { result in
+        self.sut.searchTVShow(by: showName) { result in
             switch result {
             case .success(let responseRankedTVShows):
                 rankedTVShows = responseRankedTVShows
@@ -125,7 +125,7 @@ final class TVShowsServiceTests: XCTestCase {
         var error: ApiServiceErrors?
 
         // When
-        self.sut.searchShow(by: showName) { result in
+        self.sut.searchTVShow(by: showName) { result in
             switch result {
             case .success(let responseRankedTVShows):
                 rankedTVShows = responseRankedTVShows
@@ -148,7 +148,7 @@ final class TVShowsServiceTests: XCTestCase {
         var error: ApiServiceErrors?
 
         // When
-        self.sut.searchShow(by: showName) { result in
+        self.sut.searchTVShow(by: showName) { result in
             switch result {
             case .success(let responseRankedTVShows):
                 rankedTVShows = responseRankedTVShows

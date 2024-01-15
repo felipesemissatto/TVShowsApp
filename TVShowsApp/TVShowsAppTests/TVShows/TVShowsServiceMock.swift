@@ -27,7 +27,7 @@ class TVShowsServiceMock: TVShowsServiceProtocol {
         }
     }
 
-    func searchShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
+    func searchTVShow(by name: String, completion: @escaping (Result<[RankedShow], ApiServiceErrors>) -> Void) {
         guard let mockData = self.mockData else {
             completion(.failure(.noDataFound))
             return

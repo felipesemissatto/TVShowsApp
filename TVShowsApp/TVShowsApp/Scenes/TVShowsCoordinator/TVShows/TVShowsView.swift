@@ -14,11 +14,23 @@ struct TVShowsView: View {
     // MARK: - Views
     var body: some View {
         VStack {
-            TVShowsListView(tvShowList: $viewModel.paginatedTVShowList,
-                            fetchMoreTVShow: { viewModel.fetchMoreTVShow() })
+            SearchBar(
+                typedText: $viewModel.typedText,
+                didType: {
+                    viewModel.searchShowByName()
+                }
+            )
+
+            TVShowsListView(
+                tvShowList: viewModel.typedText.isEmpty ? $viewModel.paginatedTVShows : $viewModel.searchedTVShows,
+                fetchMoreTVShow: {
+                    viewModel.fetchMoreTVShow()
+                })
             .overlay(alignment: .center) {
-                if viewModel.isFetching {
-                    SearchingView(feedbackMessage: "Loading TV shows...")
+                if viewModel.isSearching || viewModel.isFetching {
+                    SearchingView(
+                        feedbackMessage: viewModel.isSearching ? "Searching TV show by name..." : "Loading TV shows..."
+                    )
                 }
             }
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailShowView: View {
+struct DetailTVShowView: View {
 
     @Binding var tvShow: TVShow
 
@@ -90,6 +90,6 @@ struct DetailShowView_Previews: PreviewProvider {
                                           summary: "")
 
     static var previews: some View {
-        DetailShowView(tvShow: $sampleShow)
+        DetailTVShowView(tvShow: $sampleShow)
     }
 }

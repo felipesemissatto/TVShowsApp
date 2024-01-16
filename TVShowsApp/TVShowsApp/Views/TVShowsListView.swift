@@ -17,7 +17,7 @@ struct TVShowsListView: View {
                 if let fetchMoreTVShow = fetchMoreTVShow {
                     ForEach($tvShowList, id: \.id) { tvShow in
                         NavigationLink {
-                            DetailShowView(tvShow: tvShow)
+                            DetailTVShowView(tvShow: tvShow)
                         } label: {
                             TVShowCard(show: tvShow)
                                 .onAppear {

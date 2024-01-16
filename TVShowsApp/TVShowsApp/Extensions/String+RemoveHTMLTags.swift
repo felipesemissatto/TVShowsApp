@@ -14,7 +14,7 @@ extension String {
                                          options: .regularExpression,
                                          range: nil).replacingOccurrences(of: "&[^;]+;",
                                                                           with: "",
-                                                                          options:.regularExpression,
+                                                                          options: .regularExpression,
                                                                           range: nil)
     }
 }

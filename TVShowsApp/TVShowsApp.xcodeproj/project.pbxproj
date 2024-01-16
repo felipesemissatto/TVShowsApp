@@ -21,6 +21,8 @@
 		2F1254922B570FB8005B7B1D /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254912B570FB8005B7B1D /* FavoriteListView.swift */; };
 		2F1254952B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254942B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift */; };
 		2F1254972B571633005B7B1D /* LocalDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254962B571633005B7B1D /* LocalDatabaseService.swift */; };
+		2F12549A2B571AD2005B7B1D /* TVShows.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254982B571AD2005B7B1D /* TVShows.xcdatamodeld */; };
+		2F12549C2B571CA4005B7B1D /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F12549B2B571CA4005B7B1D /* CoreDataConstants.swift */; };
 		2F71EB9A2B5456FB001B992D /* TVShowsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EB992B5456FB001B992D /* TVShowsApp.swift */; };
 		2F71EB9C2B5456FB001B992D /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EB9B2B5456FB001B992D /* MainCoordinatorView.swift */; };
 		2F71EB9E2B5456FE001B992D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F71EB9D2B5456FE001B992D /* Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		2F1254912B570FB8005B7B1D /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
 		2F1254942B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseServiceProtocol.swift; sourceTree = "<group>"; };
 		2F1254962B571633005B7B1D /* LocalDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseService.swift; sourceTree = "<group>"; };
+		2F1254992B571AD2005B7B1D /* TVShows.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVShows.xcdatamodel; sourceTree = "<group>"; };
+		2F12549B2B571CA4005B7B1D /* CoreDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
 		2F71EB962B5456FB001B992D /* TVShowsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShowsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F71EB992B5456FB001B992D /* TVShowsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsApp.swift; sourceTree = "<group>"; };
 		2F71EB9B2B5456FB001B992D /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			children = (
 				2F1254942B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift */,
 				2F1254962B571633005B7B1D /* LocalDatabaseService.swift */,
+				2F1254982B571AD2005B7B1D /* TVShows.xcdatamodeld */,
 			);
 			path = LocalDatabaseService;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 			children = (
 				2F71EBD82B547168001B992D /* Endpoints.swift */,
 				2F71EBEA2B55D32D001B992D /* Colors.swift */,
+				2F12549B2B571CA4005B7B1D /* CoreDataConstants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -553,6 +559,7 @@
 			files = (
 				2F1254782B560336005B7B1D /* EpisodesListViewModel.swift in Sources */,
 				2F1254842B5606CB005B7B1D /* EpisodeCard.swift in Sources */,
+				2F12549A2B571AD2005B7B1D /* TVShows.xcdatamodeld in Sources */,
 				2F71EB9C2B5456FB001B992D /* MainCoordinatorView.swift in Sources */,
 				2F12547E2B5605BE005B7B1D /* SectionView.swift in Sources */,
 				2F1254752B56018B005B7B1D /* EpisodesService.swift in Sources */,
@@ -585,6 +592,7 @@
 				2F1254802B5605E8005B7B1D /* HorizontalEpisodeList.swift in Sources */,
 				2FA4459C2B55E67600F561AF /* SearchBar.swift in Sources */,
 				2F71EBD62B546E70001B992D /* TVShowsService.swift in Sources */,
+				2F12549C2B571CA4005B7B1D /* CoreDataConstants.swift in Sources */,
 				2FA445A52B55F48300F561AF /* String+RemoveHTMLTags.swift in Sources */,
 				2F71EB9A2B5456FB001B992D /* TVShowsApp.swift in Sources */,
 				2F71EBE72B54B04B001B992D /* TVShowsViewModel.swift in Sources */,
@@ -919,6 +927,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F1254982B571AD2005B7B1D /* TVShows.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F1254992B571AD2005B7B1D /* TVShows.xcdatamodel */,
+			);
+			currentVersion = 2F1254992B571AD2005B7B1D /* TVShows.xcdatamodel */;
+			path = TVShows.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F71EB8E2B5456FB001B992D /* Project object */;
 }

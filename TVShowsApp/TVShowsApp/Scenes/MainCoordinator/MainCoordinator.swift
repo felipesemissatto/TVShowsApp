@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum AppState {
     case tvShowList
@@ -23,5 +24,15 @@ class MainCoordinator: ObservableObject {
     init() {
         self.tvShowsCoordinator = TVShowsCoordinator(parent: self)
         self.favoriteListCoordinator = FavoriteListCoordinator(parent: self)
+        self.setupTabView()
+    }
+
+    // MARK: - Private Methods
+
+    /// Set a background for the `TabView`.
+    private func setupTabView() {
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
     }
 }

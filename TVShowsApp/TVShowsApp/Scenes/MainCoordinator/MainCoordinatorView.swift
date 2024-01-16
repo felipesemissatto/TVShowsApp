@@ -17,11 +17,15 @@ struct MainCoordinatorView: View {
         TabView(selection: $mainCoordinator.appState) {
             TVShowsCoordinatorView(tvShowsCoordinator: mainCoordinator.tvShowsCoordinator)
                 .tabItem {
-                    EmptyView()
+                    Label("TV Shows", systemImage: "list.and.film")
                 }
                 .tag(AppState.tvShowList)
 
-            // TODO: View for Favorite TV shows
+            FavoriteListCoordinatorView(object: mainCoordinator.favoriteListCoordinator)
+                .tabItem {
+                    Label("Favorite List", systemImage: "star.fill")
+                }
+                .tag(AppState.favoriteTvShowList)
         }
     }
 }

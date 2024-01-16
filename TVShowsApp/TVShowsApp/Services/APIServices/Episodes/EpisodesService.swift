@@ -15,7 +15,7 @@ class EpisodesService: EpisodesServiceProtocol {
         }
 
         let session = URLSession.shared
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) { (data, _, _) in
             guard let jsonData = data else {
                 completion(.failure(.noDataFound))
                 return

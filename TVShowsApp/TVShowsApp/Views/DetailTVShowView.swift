@@ -50,6 +50,8 @@ struct DetailTVShowView: View {
             .padding()
 
             SummaryText(summary: tvShow.summary)
+
+            EpisodesListView(viewModel: EpisodesListViewModel(tvShowId: tvShow.id))
         }
         .navigationTitle(tvShow.name)
         .navigationBarTitleDisplayMode(.inline)

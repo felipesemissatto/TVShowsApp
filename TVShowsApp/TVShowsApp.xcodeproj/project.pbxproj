@@ -19,6 +19,8 @@
 		2F1254892B56107D005B7B1D /* FavoriteListCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254882B56107D005B7B1D /* FavoriteListCoordinatorView.swift */; };
 		2F1254902B570F86005B7B1D /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F12548F2B570F86005B7B1D /* FavoriteListViewModel.swift */; };
 		2F1254922B570FB8005B7B1D /* FavoriteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254912B570FB8005B7B1D /* FavoriteListView.swift */; };
+		2F1254952B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254942B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift */; };
+		2F1254972B571633005B7B1D /* LocalDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254962B571633005B7B1D /* LocalDatabaseService.swift */; };
 		2F71EB9A2B5456FB001B992D /* TVShowsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EB992B5456FB001B992D /* TVShowsApp.swift */; };
 		2F71EB9C2B5456FB001B992D /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EB9B2B5456FB001B992D /* MainCoordinatorView.swift */; };
 		2F71EB9E2B5456FE001B992D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F71EB9D2B5456FE001B992D /* Assets.xcassets */; };
@@ -84,6 +86,8 @@
 		2F1254882B56107D005B7B1D /* FavoriteListCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListCoordinatorView.swift; sourceTree = "<group>"; };
 		2F12548F2B570F86005B7B1D /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
 		2F1254912B570FB8005B7B1D /* FavoriteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListView.swift; sourceTree = "<group>"; };
+		2F1254942B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseServiceProtocol.swift; sourceTree = "<group>"; };
+		2F1254962B571633005B7B1D /* LocalDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseService.swift; sourceTree = "<group>"; };
 		2F71EB962B5456FB001B992D /* TVShowsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShowsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F71EB992B5456FB001B992D /* TVShowsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsApp.swift; sourceTree = "<group>"; };
 		2F71EB9B2B5456FB001B992D /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 				2F1254912B570FB8005B7B1D /* FavoriteListView.swift */,
 			);
 			path = FavoriteList;
+			sourceTree = "<group>";
+		};
+		2F1254932B571300005B7B1D /* LocalDatabaseService */ = {
+			isa = PBXGroup;
+			children = (
+				2F1254942B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift */,
+				2F1254962B571633005B7B1D /* LocalDatabaseService.swift */,
+			);
+			path = LocalDatabaseService;
 			sourceTree = "<group>";
 		};
 		2F71EB8D2B5456FB001B992D = {
@@ -281,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				2F71EBCA2B545E3F001B992D /* APIServices */,
+				2F1254932B571300005B7B1D /* LocalDatabaseService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -553,9 +567,11 @@
 				2F71EBDF2B54AE61001B992D /* TVShowsCoordinator.swift in Sources */,
 				2F71EBE12B54AE7A001B992D /* TVShowsCoordinatorView.swift in Sources */,
 				2F71EBD42B5465F6001B992D /* ApiServiceErrors.swift in Sources */,
+				2F1254952B57136E005B7B1D /* LocalDatabaseServiceProtocol.swift in Sources */,
 				2FA445982B55DC8B00F561AF /* RankedTVShow.swift in Sources */,
 				2F12547A2B560506005B7B1D /* EpisodesListView.swift in Sources */,
 				2F1254872B56105A005B7B1D /* FavoriteListCoordinator.swift in Sources */,
+				2F1254972B571633005B7B1D /* LocalDatabaseService.swift in Sources */,
 				2F71EBF12B55D4F7001B992D /* SearchingView.swift in Sources */,
 				2FA445A32B55F45A00F561AF /* SummaryText.swift in Sources */,
 				2FA445A12B55F3D400F561AF /* DetailTVShowView.swift in Sources */,

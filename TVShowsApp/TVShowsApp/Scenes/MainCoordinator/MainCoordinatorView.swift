@@ -27,5 +27,10 @@ struct MainCoordinatorView: View {
                 }
                 .tag(AppState.favoriteTvShowList)
         }
+        .onAppear {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
     }
 }

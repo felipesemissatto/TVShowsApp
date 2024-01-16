@@ -21,7 +21,7 @@ struct MainCoordinatorView: View {
                 }
                 .tag(AppState.tvShowList)
 
-            FavoriteListCoordinatorView(object: mainCoordinator.favoriteListCoordinator)
+            FavoriteListCoordinatorView(favoriteListCoordinator: mainCoordinator.favoriteListCoordinator)
                 .tabItem {
                     Label("Favorite List", systemImage: "star.fill")
                 }

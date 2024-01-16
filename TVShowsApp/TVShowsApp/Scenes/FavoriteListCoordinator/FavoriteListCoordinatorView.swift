@@ -9,12 +9,13 @@ import SwiftUI
 
 struct FavoriteListCoordinatorView: View {
     // MARK: - Stored Properties
-    @ObservedObject var object: FavoriteListCoordinator
+    @ObservedObject var favoriteListCoordinator: FavoriteListCoordinator
 
     // MARK: - Views
     var body: some View {
         NavigationView {
-            EmptyView()
+            FavoriteListView(viewModel: favoriteListCoordinator.favoriteListViewModel)
+                .navigationTitle("Favorite List")
         }
     }
 }

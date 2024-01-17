@@ -14,5 +14,16 @@ struct FavoriteListView: View {
     // MARK: - Views
     var body: some View {
         TVShowsListView(tvShowList: $viewModel.favoriteList)
+            .onAppear {
+                viewModel.getFavoriteList()
+            }
+    }
+}
+
+struct FavoriteListView_Previews: PreviewProvider {
+    @State static var viewModel = FavoriteListViewModel(coordinator: FavoriteListCoordinator(parent: MainCoordinator()))
+
+    static var previews: some View {
+        FavoriteListView(viewModel: viewModel)
     }
 }

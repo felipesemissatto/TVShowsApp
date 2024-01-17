@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E252" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PosterEntity" representedClassName="PosterEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="medium" optional="YES" attributeType="String"/>
+        <attribute name="original" optional="YES" attributeType="String"/>
+        <relationship name="posterTVShow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TVShowEntity" inverseName="onPoster" inverseEntity="TVShowEntity"/>
+    </entity>
+    <entity name="ScheduleEntity" representedClassName="ScheduleEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="days" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <relationship name="scheduleTVShow" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TVShowEntity" inverseName="onSchedule" inverseEntity="TVShowEntity"/>
+    </entity>
+    <entity name="TVShowEntity" representedClassName="TVShowEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="genres" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <relationship name="onPoster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PosterEntity" inverseName="posterTVShow" inverseEntity="PosterEntity"/>
+        <relationship name="onSchedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ScheduleEntity" inverseName="scheduleTVShow" inverseEntity="ScheduleEntity"/>
+    </entity>
+</model>

@@ -8,10 +8,11 @@
 import Foundation
 
 protocol LocalDatabaseServiceProtocol {
-
+    func loadData()
+    
     func getFavoriteList() -> [TVShow]
 
-    func add(_ tvShow: TVShow) -> Bool
+    func add(_ tvShow: TVShow)
 
-    func removeTVShow(by tvShowId: Int) -> Bool
+    func removeTVShow(by tvShowId: Int)
 }

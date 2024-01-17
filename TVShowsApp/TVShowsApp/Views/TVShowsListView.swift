@@ -27,6 +27,14 @@ struct TVShowsListView: View {
                                 }
                         }
                     }
+                } else {
+                    ForEach($tvShowList, id: \.id) { tvShow in
+                        NavigationLink {
+                            DetailTVShowView(tvShow: tvShow)
+                        } label: {
+                            TVShowCard(show: tvShow)
+                        }
+                    }
                 }
             }
             .overlay(alignment: Alignment.center) {

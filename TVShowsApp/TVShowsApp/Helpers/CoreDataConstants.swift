@@ -8,5 +8,5 @@
 import Foundation
 
 public struct CoreDataConstants {
-    public static let modelName = "TVShows"
+    public static let modelName = "TVShowsModel"
 }

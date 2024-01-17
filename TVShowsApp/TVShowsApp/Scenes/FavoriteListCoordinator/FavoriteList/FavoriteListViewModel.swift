@@ -13,10 +13,28 @@ class FavoriteListViewModel: ObservableObject {
     @Published var favoriteList: [TVShow] = []
 
     private unowned let coordinator: FavoriteListCoordinator
+    private let service: LocalDatabaseServiceProtocol!
 
     // MARK: - Initialization
-    init(coordinator: FavoriteListCoordinator) {
+    init(coordinator: FavoriteListCoordinator,
+         service: LocalDatabaseServiceProtocol = LocalDatabaseService()) {
         self.coordinator = coordinator
+        self.service = service
     }
 
+    // MARK: - Methods
+
+    func getFavoriteList() {
+        favoriteList = service.getFavoriteList()
+    }
+
+    func deleteShow(by showId: Int) {
+        service.removeTVShow(by: showId)
+        getFavoriteList()
+    }
+
+    func add(_ tvShow: TVShow) {
+        service.add(tvShow)
+        getFavoriteList()
+    }
 }

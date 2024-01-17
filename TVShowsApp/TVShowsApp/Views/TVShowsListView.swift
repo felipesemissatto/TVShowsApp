@@ -41,8 +41,6 @@ struct TVShowsListView: View {
                         for showId in idsToDelete {
                             deleteTVShow(showId)
                         }
-
-                        tvShowList.remove(atOffsets: indexSet)
                     }
                 }
             }

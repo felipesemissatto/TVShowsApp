@@ -16,8 +16,11 @@ This application allows users to browse TV shows, search for specific shows, vie
 
 - **Networking:** Adoption of Combine framework for more efficient handling of API requests.
 - **Local Storage:** Consider incorporating SwiftData for local data storage.
-- **UI Enhancements:** Display an indicator on the TV Show card to signify that it's a user-favorited series in the lists.
 - **Cloud Integration:** Implement CloudKit to store local data in the cloud, ensuring data accessibility across devices.
+- **UI Enhancements:**
+  * Display an indicator on the TV Show card to signify that it's a user-favorited series in the lists;
+  * Improve pagination, because currently we have to scroll through over 250 elements to get to the next page.
+  
 
 ## Technical Decisions
 

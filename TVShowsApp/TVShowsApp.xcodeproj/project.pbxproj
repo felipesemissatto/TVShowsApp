@@ -23,6 +23,8 @@
 		2F1254972B571633005B7B1D /* LocalDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254962B571633005B7B1D /* LocalDatabaseService.swift */; };
 		2F12549C2B571CA4005B7B1D /* CoreDataConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F12549B2B571CA4005B7B1D /* CoreDataConstants.swift */; };
 		2F12549F2B573A20005B7B1D /* TVShowsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F12549D2B573A20005B7B1D /* TVShowsModel.xcdatamodeld */; };
+		2F1254A12B57595C005B7B1D /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254A02B57595C005B7B1D /* FavoriteButton.swift */; };
+		2F1254A42B576820005B7B1D /* DetailTVShowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254A32B576820005B7B1D /* DetailTVShowViewModel.swift */; };
 		2F71EB9A2B5456FB001B992D /* TVShowsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EB992B5456FB001B992D /* TVShowsApp.swift */; };
 		2F71EB9C2B5456FB001B992D /* MainCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EB9B2B5456FB001B992D /* MainCoordinatorView.swift */; };
 		2F71EB9E2B5456FE001B992D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F71EB9D2B5456FE001B992D /* Assets.xcassets */; };
@@ -92,6 +94,8 @@
 		2F1254962B571633005B7B1D /* LocalDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDatabaseService.swift; sourceTree = "<group>"; };
 		2F12549B2B571CA4005B7B1D /* CoreDataConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConstants.swift; sourceTree = "<group>"; };
 		2F12549E2B573A20005B7B1D /* TVShowsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVShowsModel.xcdatamodel; sourceTree = "<group>"; };
+		2F1254A02B57595C005B7B1D /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		2F1254A32B576820005B7B1D /* DetailTVShowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTVShowViewModel.swift; sourceTree = "<group>"; };
 		2F71EB962B5456FB001B992D /* TVShowsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShowsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F71EB992B5456FB001B992D /* TVShowsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsApp.swift; sourceTree = "<group>"; };
 		2F71EB9B2B5456FB001B992D /* MainCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinatorView.swift; sourceTree = "<group>"; };
@@ -193,6 +197,15 @@
 			path = LocalDatabaseService;
 			sourceTree = "<group>";
 		};
+		2F1254A22B5767C9005B7B1D /* DetailTVShow */ = {
+			isa = PBXGroup;
+			children = (
+				2FA445A02B55F3D400F561AF /* DetailTVShowView.swift */,
+				2F1254A32B576820005B7B1D /* DetailTVShowViewModel.swift */,
+			);
+			path = DetailTVShow;
+			sourceTree = "<group>";
+		};
 		2F71EB8D2B5456FB001B992D = {
 			isa = PBXGroup;
 			children = (
@@ -273,13 +286,13 @@
 				2F71EBEE2B55D40E001B992D /* LoadingView.swift */,
 				2F71EBF02B55D4F7001B992D /* SearchingView.swift */,
 				2FA4459B2B55E67600F561AF /* SearchBar.swift */,
-				2FA445A02B55F3D400F561AF /* DetailTVShowView.swift */,
 				2FA445A22B55F45A00F561AF /* SummaryText.swift */,
 				2F12547B2B560591005B7B1D /* EpisodeCollection.swift */,
 				2F12547D2B5605BE005B7B1D /* SectionView.swift */,
 				2F12547F2B5605E8005B7B1D /* HorizontalEpisodeList.swift */,
 				2F1254812B56062E005B7B1D /* DetailEpisodeView.swift */,
 				2F1254832B5606CB005B7B1D /* EpisodeCard.swift */,
+				2F1254A02B57595C005B7B1D /* FavoriteButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,8 +302,9 @@
 			children = (
 				2F71EBDA2B54ABEC001B992D /* MainCoordinator */,
 				2F71EBDD2B54AE32001B992D /* TVShowsCoordinator */,
-				2F1254762B56030A005B7B1D /* EpisodesListView */,
 				2F1254852B561015005B7B1D /* FavoriteListCoordinator */,
+				2F1254A22B5767C9005B7B1D /* DetailTVShow */,
+				2F1254762B56030A005B7B1D /* EpisodesListView */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -589,6 +603,7 @@
 				2F1254892B56107D005B7B1D /* FavoriteListCoordinatorView.swift in Sources */,
 				2F71EBE92B55D223001B992D /* TVShowsListView.swift in Sources */,
 				2F1254802B5605E8005B7B1D /* HorizontalEpisodeList.swift in Sources */,
+				2F1254A42B576820005B7B1D /* DetailTVShowViewModel.swift in Sources */,
 				2FA4459C2B55E67600F561AF /* SearchBar.swift in Sources */,
 				2F71EBD62B546E70001B992D /* TVShowsService.swift in Sources */,
 				2F12549C2B571CA4005B7B1D /* CoreDataConstants.swift in Sources */,
@@ -596,6 +611,7 @@
 				2F71EB9A2B5456FB001B992D /* TVShowsApp.swift in Sources */,
 				2F12549F2B573A20005B7B1D /* TVShowsModel.xcdatamodeld in Sources */,
 				2F71EBE72B54B04B001B992D /* TVShowsViewModel.swift in Sources */,
+				2F1254A12B57595C005B7B1D /* FavoriteButton.swift in Sources */,
 				2FA445AA2B55F7F900F561AF /* Episode.swift in Sources */,
 				2FA4459F2B55E79B00F561AF /* View+HideKeyboard.swift in Sources */,
 			);

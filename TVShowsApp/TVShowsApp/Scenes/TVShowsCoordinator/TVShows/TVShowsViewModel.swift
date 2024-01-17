@@ -31,6 +31,8 @@ class TVShowsViewModel: ObservableObject {
         self.service = service
     }
 
+    // MARK: - Methods
+
     /// Get paginated TV shows from the API.
     ///
     /// - Parameter page: The current page to search for.
@@ -74,6 +76,7 @@ class TVShowsViewModel: ObservableObject {
         }
     }
 
+    /// Get TV shows by their name.
     func searchShowByName() {
         self.isSearching = true
         self.service.searchTVShow(by: typedText) { result in

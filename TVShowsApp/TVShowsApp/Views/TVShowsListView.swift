@@ -10,7 +10,7 @@ import SwiftUI
 struct TVShowsListView: View {
     @Binding var tvShowList: [TVShow]
     var fetchMoreTVShow: (() -> Void)?
-    var deleteTVShow: ((_ showId: Int) -> Void)? = nil
+    var deleteTVShow: ((_ showId: Int) -> Void)?
 
     var body: some View {
         VStack {
@@ -18,7 +18,7 @@ struct TVShowsListView: View {
                 if let fetchMoreTVShow = fetchMoreTVShow {
                     ForEach($tvShowList, id: \.id) { tvShow in
                         NavigationLink {
-                            DetailTVShowView(tvShow: tvShow)
+                            DetailTVShowView(viewModel: DetailTVShowViewModel(tvShow: tvShow.wrappedValue))
                         } label: {
                             TVShowCard(show: tvShow)
                                 .onAppear {
@@ -31,7 +31,7 @@ struct TVShowsListView: View {
                 } else if let deleteTVShow = deleteTVShow {
                     ForEach($tvShowList, id: \.id) { tvShow in
                         NavigationLink {
-                            DetailTVShowView(tvShow: tvShow)
+                            DetailTVShowView(viewModel: DetailTVShowViewModel(tvShow: tvShow.wrappedValue))
                         } label: {
                             TVShowCard(show: tvShow)
                         }

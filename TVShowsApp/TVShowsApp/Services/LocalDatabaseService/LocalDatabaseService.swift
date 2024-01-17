@@ -10,6 +10,11 @@ import CoreData
 
 class LocalDatabaseService: LocalDatabaseServiceProtocol {
 
+    // MARK: - Properties
+
+    /// Singleton instance.
+    static let shared = LocalDatabaseService()
+
     /// CoreData stack.
     private let persistContainer: NSPersistentContainer
 
@@ -19,7 +24,9 @@ class LocalDatabaseService: LocalDatabaseServiceProtocol {
     /// TVShows persisted on CoreData.
     private var coreDataTVShows: [TVShowEntity] = []
 
-    init() {
+    // MARK: - Private Methods
+
+    private init() {
         self.persistContainer = NSPersistentContainer(name: CoreDataConstants.modelName)
         self.persistContainer.loadPersistentStores { _, error in
             // TODO: Show an error alert
@@ -29,6 +36,8 @@ class LocalDatabaseService: LocalDatabaseServiceProtocol {
         }
         self.loadData()
     }
+
+    // MARK: - Methods
 
     func loadData() {
         do {
@@ -42,13 +51,13 @@ class LocalDatabaseService: LocalDatabaseServiceProtocol {
     func getFavoriteList() -> [TVShow] {
         return coreDataTVShows.map { tvShowEntity in
             var poster: Poster?
-            if let posterEntity = tvShowEntity.onPoster {
+            if let posterEntity = tvShowEntity.image {
                 poster = Poster(medium: posterEntity.medium ?? "",
                                 original: posterEntity.original ?? "")
             }
 
-            let schedule = Schedule(time: tvShowEntity.onSchedule?.time ?? "",
-                                    days: tvShowEntity.onSchedule?.days ?? [])
+            let schedule = Schedule(time: tvShowEntity.schedule?.time ?? "",
+                                    days: tvShowEntity.schedule?.days ?? [])
 
             return TVShow(id: Int(tvShowEntity.id),
                           name: tvShowEntity.name ?? "Unknown",
@@ -71,8 +80,8 @@ class LocalDatabaseService: LocalDatabaseServiceProtocol {
         let tvShowEntity = TVShowEntity(context: context)
         tvShowEntity.id = Int64(tvShow.id)
         tvShowEntity.name = tvShow.name
-        tvShowEntity.onPoster = poster
-        tvShowEntity.onSchedule = schedule
+        tvShowEntity.image = poster
+        tvShowEntity.schedule = schedule
         tvShowEntity.genres = tvShow.genres
         tvShowEntity.summary = tvShow.summary
 
@@ -88,14 +97,20 @@ class LocalDatabaseService: LocalDatabaseServiceProtocol {
         }
     }
 
+    func isTVShowOnFavoriteList(tvShowId: Int) -> Bool {
+        return coreDataTVShows.contains(where: { $0.id == tvShowId})
+    }
+
     // MARK: - Private Methods
 
+    /// Save any change on CoreData if happened.
     private func saveContext() {
         guard context.hasChanges else { return }
 
         do {
             try context.save()
         } catch {
+            // TODO: Show an error alert
             print("Error saving context: \(error)")
             context.rollback()
         }

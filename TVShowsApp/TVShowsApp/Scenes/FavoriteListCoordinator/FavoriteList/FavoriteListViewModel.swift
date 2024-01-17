@@ -17,24 +17,23 @@ class FavoriteListViewModel: ObservableObject {
 
     // MARK: - Initialization
     init(coordinator: FavoriteListCoordinator,
-         service: LocalDatabaseServiceProtocol = LocalDatabaseService()) {
+         service: LocalDatabaseServiceProtocol = LocalDatabaseService.shared) {
         self.coordinator = coordinator
         self.service = service
     }
 
     // MARK: - Methods
 
+    /// Return a list of favorite TV shows in alphabetical order.
     func getFavoriteList() {
-        favoriteList = service.getFavoriteList()
+        favoriteList = service.getFavoriteList().sorted(by: {$0.name < $1.name})
     }
 
+    /// Remove TV show from local storage.
+    ///
+    /// - Parameter showId: TV show identifier.
     func deleteTVShow(by showId: Int) {
         service.removeTVShow(by: showId)
-        getFavoriteList()
-    }
-
-    func add(_ tvShow: TVShow) {
-        service.add(tvShow)
         getFavoriteList()
     }
 }

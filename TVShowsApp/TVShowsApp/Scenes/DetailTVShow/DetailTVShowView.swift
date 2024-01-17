@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DetailTVShowView: View {
 
-    @Binding var tvShow: TVShow
+    @ObservedObject var viewModel: DetailTVShowViewModel
 
     var body: some View {
         ScrollView {
             VStack {
-                if let image = tvShow.image {
+                if let image = viewModel.tvShow.image {
                     AsyncImage(url: URL(string: image.original)) { image in
                         image
                             .resizable()
@@ -41,7 +41,7 @@ struct DetailTVShowView: View {
                         .background(Gray.lightGray)
                 }
 
-                Text(subtitleString(from: tvShow))
+                Text(subtitleString(from: viewModel.tvShow))
                     .font(.system(size: 12,
                                   weight: .light,
                                   design: .default))
@@ -49,11 +49,16 @@ struct DetailTVShowView: View {
             }
             .padding()
 
-            SummaryText(summary: tvShow.summary)
+            SummaryText(summary: viewModel.tvShow.summary)
 
-            EpisodesListView(viewModel: EpisodesListViewModel(tvShowId: tvShow.id))
+            EpisodesListView(viewModel: EpisodesListViewModel(tvShowId: viewModel.tvShow.id))
         }
-        .navigationTitle(tvShow.name)
+        .navigationTitle(viewModel.tvShow.name)
+        .navigationBarItems(trailing: FavoriteButton(isFavorited: viewModel.isTVShowFavorited(),
+                                                     addTVShowToFavoriteList: { viewModel.addTVShowToFavoriteList()},
+                                                     deleteTVShowToFavoriteList: {
+            viewModel.deleteTVShowToFavoriteList()
+        }))
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -84,14 +89,14 @@ struct DetailTVShowView: View {
 }
 
 struct DetailShowView_Previews: PreviewProvider {
-    @State static var sampleShow = TVShow(id: 0,
-                                          name: "The Daily Show with Jon Stewart",
-                                          image: nil,
-                                          schedule: Schedule(time: "", days: []),
-                                          genres: [],
-                                          summary: "")
+    @State static var viewModel = DetailTVShowViewModel(tvShow: TVShow(id: 0,
+                                                                       name: "The Daily Show with Jon Stewart",
+                                                                       image: nil,
+                                                                       schedule: Schedule(time: "", days: []),
+                                                                       genres: [],
+                                                                       summary: ""))
 
     static var previews: some View {
-        DetailTVShowView(tvShow: $sampleShow)
+        DetailTVShowView(viewModel: viewModel)
     }
 }

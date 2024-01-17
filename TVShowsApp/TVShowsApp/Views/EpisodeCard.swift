@@ -67,6 +67,7 @@ struct EpisodeCard: View {
         .frame(width: 260,
                height: 225,
                alignment: .leading)
+        .accessibilityLabel("EpisodeCard\(episode.id)")
     }
 }
 

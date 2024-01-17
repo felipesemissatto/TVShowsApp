@@ -22,6 +22,7 @@ struct SearchBar: View {
                 .onChange(of: typedText) { _ in
                     didType()
                 }
+                .accessibilityLabel("SearchBar")
         }
         .background(Gray.lightGray)
         .frame(maxWidth: .infinity,

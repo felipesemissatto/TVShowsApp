@@ -42,6 +42,7 @@ struct TVShowCard: View {
             Spacer()
         }
         .frame(height: 116)
+        .accessibilityLabel("TVShowCard\(show.id)")
     }
 }
 

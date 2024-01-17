@@ -32,7 +32,7 @@ struct FavoriteButton: View {
                 Image(systemName: "star")
                     .renderingMode(.original)
             }
-        }
+        }.accessibilityLabel("FavoriteButton")
     }
 }
 

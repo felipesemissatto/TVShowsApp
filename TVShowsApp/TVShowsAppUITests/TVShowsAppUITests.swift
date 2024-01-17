@@ -6,35 +6,36 @@
 //
 
 import XCTest
-
+// swiftlint:disable line_length
 final class TVShowsAppUITests: XCTestCase {
 
+    // MARK: - Tests Lifecycle
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    // MARK: - Tests
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testFavoritingTwoTVShows() throws {
+        // Open app
         let app = XCUIApplication()
         app.launch()
+        sleep(2)
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        // Favoriting the first one
+        app.collectionViews.buttons["TVShowCard1"].tap()
+        app.scrollViews.otherElements.scrollViews.otherElements.buttons["EpisodeCard1, EpisodeCard1, EpisodeCard1"].tap()
+        app.navigationBars["_TtGC7SwiftUI19UIHosting"].buttons["Under the Dome"].tap()
+
+        app.navigationBars["Under the Dome"]/*@START_MENU_TOKEN@*/.buttons["FavoriteButton"]/*[[".otherElements[\"FavoriteButton\"].buttons[\"FavoriteButton\"]",".buttons[\"FavoriteButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Under the Dome"].buttons["TV Shows"].tap()
+
+        // Favoriting the second one
+        app.collectionViews/*@START_MENU_TOKEN@*/.buttons["TVShowCard2"]/*[[".cells.buttons[\"TVShowCard2\"]",".buttons[\"TVShowCard2\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Person of Interest"]/*@START_MENU_TOKEN@*/.buttons["FavoriteButton"]/*[[".otherElements[\"FavoriteButton\"].buttons[\"FavoriteButton\"]",".buttons[\"FavoriteButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Person of Interest"].buttons["TV Shows"].tap()
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
 }
+// swiftlint:enable line_length

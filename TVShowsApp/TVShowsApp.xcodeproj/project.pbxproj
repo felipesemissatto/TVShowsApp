@@ -31,7 +31,6 @@
 		2F71EBA12B5456FE001B992D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F71EBA02B5456FE001B992D /* Preview Assets.xcassets */; };
 		2F71EBAB2B5456FF001B992D /* TVShowsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBAA2B5456FF001B992D /* TVShowsServiceTests.swift */; };
 		2F71EBB52B5456FF001B992D /* TVShowsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBB42B5456FF001B992D /* TVShowsAppUITests.swift */; };
-		2F71EBB72B5456FF001B992D /* TVShowsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBB62B5456FF001B992D /* TVShowsAppUITestsLaunchTests.swift */; };
 		2F71EBCD2B545EF4001B992D /* TVShowsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBCC2B545EF4001B992D /* TVShowsServiceProtocol.swift */; };
 		2F71EBCF2B545F1B001B992D /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBCE2B545F1A001B992D /* TVShow.swift */; };
 		2F71EBD22B546505001B992D /* TVShowsServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F71EBD12B546505001B992D /* TVShowsServiceMock.swift */; };
@@ -105,7 +104,6 @@
 		2F71EBAA2B5456FF001B992D /* TVShowsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsServiceTests.swift; sourceTree = "<group>"; };
 		2F71EBB02B5456FF001B992D /* TVShowsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVShowsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F71EBB42B5456FF001B992D /* TVShowsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsAppUITests.swift; sourceTree = "<group>"; };
-		2F71EBB62B5456FF001B992D /* TVShowsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2F71EBCC2B545EF4001B992D /* TVShowsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsServiceProtocol.swift; sourceTree = "<group>"; };
 		2F71EBCE2B545F1A001B992D /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		2F71EBD12B546505001B992D /* TVShowsServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowsServiceMock.swift; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				2F71EBB42B5456FF001B992D /* TVShowsAppUITests.swift */,
-				2F71EBB62B5456FF001B992D /* TVShowsAppUITestsLaunchTests.swift */,
 			);
 			path = TVShowsAppUITests;
 			sourceTree = "<group>";
@@ -633,7 +630,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F71EBB52B5456FF001B992D /* TVShowsAppUITests.swift in Sources */,
-				2F71EBB72B5456FF001B992D /* TVShowsAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

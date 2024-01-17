@@ -10,6 +10,7 @@ import SwiftUI
 struct TVShowsListView: View {
     @Binding var tvShowList: [TVShow]
     var fetchMoreTVShow: (() -> Void)?
+    var deleteTVShow: ((_ showId: Int) -> Void)? = nil
 
     var body: some View {
         VStack {
@@ -27,13 +28,21 @@ struct TVShowsListView: View {
                                 }
                         }
                     }
-                } else {
+                } else if let deleteTVShow = deleteTVShow {
                     ForEach($tvShowList, id: \.id) { tvShow in
                         NavigationLink {
                             DetailTVShowView(tvShow: tvShow)
                         } label: {
                             TVShowCard(show: tvShow)
                         }
+                    }
+                    .onDelete { indexSet in
+                        let idsToDelete = indexSet.map { self.tvShowList[$0].id }
+                        for showId in idsToDelete {
+                            deleteTVShow(showId)
+                        }
+
+                        tvShowList.remove(atOffsets: indexSet)
                     }
                 }
             }

@@ -13,10 +13,13 @@ struct FavoriteListView: View {
 
     // MARK: - Views
     var body: some View {
-        TVShowsListView(tvShowList: $viewModel.favoriteList)
-            .onAppear {
-                viewModel.getFavoriteList()
-            }
+        TVShowsListView(tvShowList: $viewModel.favoriteList,
+                        deleteTVShow: { showId in
+            viewModel.deleteTVShow(by: showId)
+        })
+        .onAppear {
+            viewModel.getFavoriteList()
+        }
     }
 }
 

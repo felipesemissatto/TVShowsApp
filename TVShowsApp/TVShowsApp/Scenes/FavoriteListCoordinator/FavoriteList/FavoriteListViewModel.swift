@@ -28,7 +28,7 @@ class FavoriteListViewModel: ObservableObject {
         favoriteList = service.getFavoriteList()
     }
 
-    func deleteShow(by showId: Int) {
+    func deleteTVShow(by showId: Int) {
         service.removeTVShow(by: showId)
         getFavoriteList()
     }
